@@ -1,6 +1,6 @@
-CREATE DATABASE db_recruitment;
+CREATE DATABASE db_recruitment1;
 
-USE db_recruitment;
+USE db_recruitment1;
 
 CREATE TABLE users (
   id BIGINT AUTO_INCREMENT NOT NULL,
