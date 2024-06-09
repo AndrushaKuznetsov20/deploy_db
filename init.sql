@@ -34,7 +34,7 @@ CREATE TABLE responsesToResume (
   id BIGINT AUTO_INCREMENT NOT NULL,
   user_id BIGINT NOT NULL,
   resume_id BIGINT NOT NULL,
-  responseDate DATE NOT NULL,
+  responseDate DATE NOT NULL DEFAULT (CURRENT_DATE),
   CONSTRAINT pk_responsestoresume PRIMARY KEY (id),
   CONSTRAINT FK_RESPONSESTORESUME_ON_RESUME FOREIGN KEY (resume_id) REFERENCES resumes(id),
   CONSTRAINT FK_RESPONSESTORESUME_ON_USER FOREIGN KEY (user_id) REFERENCES users(id)
@@ -48,7 +48,7 @@ CREATE TABLE vacancy (
   wage INT NULL,
   schedule VARCHAR(255) NULL,
   status_vacancy VARCHAR(255) NOT NULL,
-  createDateTime DATE NOT NULL,
+  createDateTime DATE NOT NULL DEFAULT (CURRENT_DATE),
   user_id BIGINT NOT NULL,
   CONSTRAINT pk_vacancy PRIMARY KEY (id),
   CONSTRAINT FK_VACANCY_ON_USER FOREIGN KEY (user_id) REFERENCES users(id)
@@ -58,7 +58,7 @@ CREATE TABLE responses (
   id BIGINT AUTO_INCREMENT NOT NULL,
   vacancy_id BIGINT NOT NULL,
   user_id BIGINT NOT NULL,
-  currentDateTime DATETIME NOT NULL,
+  currentDateTime DATE NOT NULL DEFAULT (CURRENT_DATE),
   statusResponse VARCHAR(255) NOT NULL,
   CONSTRAINT pk_responses PRIMARY KEY (id),
   CONSTRAINT FK_RESPONSES_ON_USER FOREIGN KEY (user_id) REFERENCES users(id),
@@ -87,7 +87,7 @@ CREATE TABLE messages (
    content VARCHAR(255) NULL,
    sender BIGINT NULL,
    receiver BIGINT NULL,
-   date datetime NULL,
+   date datetime DEFAULT CURRENT_TIMESTAMP,
    CONSTRAINT pk_messages PRIMARY KEY (id)
 );
 
