@@ -90,7 +90,3 @@ CREATE TABLE messages (
    date datetime DEFAULT CURRENT_TIMESTAMP,
    CONSTRAINT pk_messages PRIMARY KEY (id)
 );
-
-INSERT INTO users (username, email, number, password, active, role) VALUES
-  ('Admin', 'admin@mail.ru', '89209568731', 'root', 1, 'ROLE_ADMIN'),
-  ('Moder', 'moder@mail.ru', '89206295073', 'root', 1, 'ROLE_MODER');
