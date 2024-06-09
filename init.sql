@@ -48,7 +48,7 @@ CREATE TABLE vacancy (
   wage INT NULL,
   schedule VARCHAR(255) NULL,
   status_vacancy VARCHAR(255) NOT NULL,
-  createDateTime DATETIME NOT NULL,
+  createDateTime DATE NOT NULL DEFAULT CURRENT_DATE(),
   user_id BIGINT NOT NULL,
   CONSTRAINT pk_vacancy PRIMARY KEY (id),
   CONSTRAINT FK_VACANCY_ON_USER FOREIGN KEY (user_id) REFERENCES users(id)
