@@ -59,7 +59,7 @@ CREATE TABLE responses (
   vacancy_id BIGINT NOT NULL,
   user_id BIGINT NOT NULL,
   currentDateTime DATE NOT NULL DEFAULT (CURRENT_DATE),
-  statusResponse VARCHAR(255) NULL,
+  statusResponse VARCHAR(255) DEFAULT 'Не обработан!' NULL,
   CONSTRAINT pk_responses PRIMARY KEY (id),
   CONSTRAINT FK_RESPONSES_ON_USER FOREIGN KEY (user_id) REFERENCES users(id),
   CONSTRAINT FK_RESPONSES_ON_VACANCY FOREIGN KEY (vacancy_id) REFERENCES vacancy(id)
